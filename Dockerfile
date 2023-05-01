@@ -7,7 +7,8 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN mkdir -p /opt/mbaro
 COPY requirements.txt /opt/mbaro/
 
-RUN apt-get update && apt-get install -y git && apt-get install wget
+RUN apt-get update && apt-get install -y git && apt-get install -y wget \
+  apt-get install -y python3 python3-pip
 
 RUN pip3 install -r /opt/mbaro/requirements.txt
 
