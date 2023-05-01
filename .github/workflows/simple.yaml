@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: echo string A
-        run echo "Hello GitHub Actions!"
+        run: echo "Hello GitHub Actions!"
       - name: multiline scripts
         run: |
           node -v
