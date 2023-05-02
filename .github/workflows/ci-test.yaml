@@ -18,15 +18,12 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Set up Python tools
+      - name: Install dependencies
         run: |
           pip3 install -r requirements-dev.txt
 
       - name: lint
         run: |
-          echo "*****   ENVIRONMENT   *****"
-          env
-          echo "*****   ENVIRONMENT   *****"
           make lint
           
 
@@ -48,10 +45,15 @@ jobs:
 
       - name: test-level-01
         run: |
-          echo "*****   ENVIRONMENT   *****"
-          env
-          echo "*****   ENVIRONMENT   *****"
           make test-level-01
+      
       - name: test-level-02
         run: |
           make test-level-02
+
+      - name: SonarCloud Scan
+        if: ${{ github.event_name == 'pull_request' }}
+        uses: SonarSource/sonarcloud-github-action@1.9.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
