@@ -12,4 +12,6 @@ jobs:
         run: |
           node -v
           npm -v
-
+          echo "<which pyton>"
+          which python
+          echo "</which python>"

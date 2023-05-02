@@ -1,0 +1,34 @@
+name: ci-test
+on:
+  push
+
+jobs:
+  linting:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v2
+      - name: lint
+        run: |
+          echo "*****   ENVIRONMENT   *****"
+          env
+          echo "*****   ENVIRONMENT   *****"
+          make lint
+          
+
+  testing:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v2
+      - name: test-level-01
+        run: |
+          echo "*****   ENVIRONMENT   *****"
+          env
+          echo "*****   ENVIRONMENT   *****"
+          make test-level-01
+      - name: test-level-02
+        run: |
+          make test-level-02

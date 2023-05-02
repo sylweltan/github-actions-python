@@ -11,4 +11,4 @@ if __name__ == '__main__':
     func_ping
     func_pong
     kolo_czokta = 50
-    printf("Kolo czokta!: {kolo_czokta}")
+    print(f"Kolo czokta!: {kolo_czokta}")
