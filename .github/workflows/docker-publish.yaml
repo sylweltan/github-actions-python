@@ -28,5 +28,5 @@ jobs:
           tags: |
             sylweltan/python-jopper:latest
             sylweltan/python-jopperolo:latest
-          push: ${{ github.ref == 'ref/heads/master' }}
+          push: ${{ github.ref == 'refs/heads/master' }}
           # tag_with_ref: true
