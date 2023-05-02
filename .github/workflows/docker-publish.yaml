@@ -33,6 +33,7 @@ jobs:
         with:
           images: |
             sylweltan/abc-image
+            sylweltan/def-image
 
           #sylweltan/poow-how
           #sylweltan/soow-hau
