@@ -37,14 +37,17 @@ jobs:
           #sylweltan/poow-how
           #sylweltan/soow-hau
           tags: |
-            type=schedule
-            type=ref,event=pr
             type=semver,pattern={{version}}
 #            type=semver,pattern={{major}}.{{minor}}
 #            type=semver,pattern={{major}}
 #            type=sha
 #            type=ref,event=branch
-      
+
+# Lastly commented out
+            # type=schedule
+            # type=ref,event=pr
+
+
       - name: Build and push
         uses: docker/build-push-action@v4
         with:
