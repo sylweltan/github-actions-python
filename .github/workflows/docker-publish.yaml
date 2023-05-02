@@ -4,6 +4,7 @@ on:
     branches:
       - main
       - master
+      - develop
       - 'releases/**'
   release:
     types:
@@ -38,6 +39,7 @@ jobs:
           #sylweltan/poow-how
           #sylweltan/soow-hau
           tags: |
+            type=sha
             type=semver,pattern={{version}}
 #            type=semver,pattern={{major}}.{{minor}}
 #            type=semver,pattern={{major}}
