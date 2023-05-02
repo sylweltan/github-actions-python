@@ -19,6 +19,7 @@ lint:
 	@echo "\n${RED}Running LINT ${NC}\n"
 	@echo "\n${YELLOW}step 01 - pylint ${NC}\n"
 	@pylint --rcfile=setup.cfg *.py
+
 	@echo "\n${YELLOW}step 02 - pydocstyle ${NC}\n"
 	@pydocstyle --config=setup.cfg mocho_baro.py
 	@echo "\n${YELLOW}step 03 - your advert here ${NC}\n"
@@ -29,4 +30,4 @@ clean:
 
 .PHONY: clean test
 
-
+#	# @pylint --fail-under=4
