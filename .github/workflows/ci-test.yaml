@@ -4,11 +4,17 @@ on:
 
 jobs:
   linting:
-    name: Lint
+    name: Phase Lint
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
+
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
       - name: lint
         run: |
           echo "*****   ENVIRONMENT   *****"
@@ -18,11 +24,17 @@ jobs:
           
 
   testing:
-    name: Test
+    name: Phase Test
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
+      
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
       - name: test-level-01
         run: |
           echo "*****   ENVIRONMENT   *****"
