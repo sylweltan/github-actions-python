@@ -8,7 +8,7 @@ run:
 
 test-level-01:
 	@echo "\n${RED}Running TEST level 01 ${NC}\n"
-	pytest
+	@pytest
 
 test-level-02:
 	@echo "\n${RED}Running TEST level 02 ${NC}\n"
