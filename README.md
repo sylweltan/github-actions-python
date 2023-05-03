@@ -30,7 +30,7 @@
 
 ### Lines of code
 
-[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=github-actions-python&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=github-actions-python)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=github-actions-python&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=github-actions-python)
 
 ### Security Rating
 
@@ -39,4 +39,3 @@
 ### Code Smells
 
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=github-actions-python&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=github-actions-python)
-
