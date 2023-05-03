@@ -1,10 +1,11 @@
 name: SonarScanMaster
 on:
-  push:
-    branches:
-      - master
-  pull_request:
-    types: [opened, synchronize, reopened]
+  repository_dispatch:
+  # push:
+  #   branches:
+  #     - master
+  # pull_request:
+  #   types: [opened, synchronize, reopened]
 jobs:
   sonarcloud:
     name: SonarCloud
