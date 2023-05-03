@@ -1,13 +1,19 @@
 name: ci-test
 on:
-  - push
-  - pull_request
+  pull_request:
+    branches: [develop, master]
+  push:
+    branches: [develop, master]
+
+  # - pull_request
+  # - push
 
 
 
 jobs:
-  linting:
-    name: Phase Lint
+  # linting:
+  build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
@@ -21,27 +27,28 @@ jobs:
       - name: Install dependencies
         run: |
           pip3 install -r requirements-dev.txt
+          pip3 install -r requirements.txt
 
       - name: lint
         run: |
           make lint
           
 
-  testing:
-    name: Phase Test
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out the repo
-        uses: actions/checkout@v2
+  # testing:
+  #   name: Phase Test
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Check out the repo
+  #       uses: actions/checkout@v2
       
-      - name: Set up Python 3.10
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
+  #     - name: Set up Python 3.10
+  #       uses: actions/setup-python@v4
+  #       with:
+  #         python-version: '3.10'
 
-      - name: Set up Python tools
-        run: |
-          pip3 install -r requirements-dev.txt
+      # - name: Set up Python tools
+      #   run: |
+      #     pip3 install -r requirements-dev.txt
 
       - name: test-level-01
         run: |
@@ -52,8 +59,13 @@ jobs:
           make test-level-02
 
       - name: SonarCloud Scan
-        if: ${{ github.event_name == 'pull_request' }}
+        # if: ${{ github.event_name == 'pull_request' }}
+        # if: ${{ github.event_name == 'push' }}
+        # if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         uses: SonarSource/sonarcloud-github-action@v1.9.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v3
