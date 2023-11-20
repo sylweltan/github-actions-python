@@ -7,6 +7,9 @@
 ### Build badge ci-test
 
 ![ci-test](https://github.com/sylweltan/github-actions-python/workflows/ci-test/badge.svg?branch=develop&event=push)
+[![Release Charts 1](https://github.com/sylweltan/github-actions-python/workflows/Release%20Charts/badge.svg?branch=main)](https://github.com/sylweltan/github-actions-python/workflows/Release%20Charts/badge.svg?branch=main)
+![Release Charts 2](https://github.com/sylweltan/github-actions-python/workflows/Release%20Charts/badge.svg?branch=main)
+![ci-test 2](https://github.com/sylweltan/github-actions-python/workflows/ci-test/badge.svg?branch=develop&event=push)
 
 ## Docker Badges Time
 
