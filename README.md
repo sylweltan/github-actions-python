@@ -11,6 +11,10 @@
 ![Release Charts 2](https://github.com/sylweltan/github-actions-python/workflows/Release%20Charts/badge.svg?branch=master)
 ![ci-test 2](https://github.com/sylweltan/github-actions-python/workflows/ci-test/badge.svg?branch=develop&event=push)
 
+![Release Charts 3 - master](https://github.com/sylweltan/github-actions-python/workflows/Release%20Charts/badge.svg?branch=master)
+![Release Charts 4 - master&push](https://github.com/sylweltan/github-actions-python/workflows/Release%20Charts/badge.svg?branch=master&event=push)
+![Release Charts 5 - just Release Charts](https://github.com/sylweltan/github-actions-python/workflows/Release%20Charts/badge.svg)
+
 ## Docker Badges Time
 
 ### Docker Badges one-by-one
